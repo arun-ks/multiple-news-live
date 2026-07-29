@@ -7,7 +7,7 @@ const CHANNELS = [
   {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "AjG4Qdg1t4Q"},
   {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "XbPuDl8Hy6I"},
   {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "Mn630CjGxZ8"},
-  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "oBAo4FvFKog"},
+  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "Vdzu2IeLzzo"},
   {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": "yiiqRHY1Bl8"},
   {"name": "Asianet News", "Handle": "@AsianetNews", "channelId": "UCf8w5m0YsRa8MHQ5bwSGmbw", "videoId": "s0LLVQeMmtU"},
   {"name": "Reporter", "Handle": "@reporterlive", "channelId": "UCFx1nseXKTc1Culiu3neeSQ", "videoId": "nObUcHKZEGY"},
