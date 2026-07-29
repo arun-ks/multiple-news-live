@@ -2,7 +2,7 @@
 // scripts/update-live-streams.py.
 const CHANNELS = [
   {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "6NILBpLZjzo"},
-  {"name": "The Hindu", "Handle": "@TheHinduOfficial", "channelId": "UC3njZ48-FDxLleBYaP0SZIg", "videoId": null},
+  {"name": "The Hindu", "Handle": "@TheHinduOfficial", "channelId": "UC3njZ48-FDxLleBYaP0SZIg", "videoId": "EMSKtjpFBks"},
   {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "YWvVoDuq5ig"},
   {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "11H5YYPfSsA"},
   {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "kJCoMf3He4w"},
