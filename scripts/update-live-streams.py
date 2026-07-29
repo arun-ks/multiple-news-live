@@ -23,11 +23,34 @@ FILE_PREFIX = (
 FILE_SUFFIX = "\n];\n"
 
 
+def load_env_local() -> None:
+    """Load YOUTUBE_API_KEY from .env.local without overriding the shell."""
+    if os.environ.get("YOUTUBE_API_KEY"):
+        return
+
+    project_root = Path(__file__).resolve().parents[1]
+    for path in (project_root / ".env.local", Path.home() / ".env.local"):
+        if not path.is_file():
+            continue
+        for raw_line in path.read_text(encoding="utf-8-sig").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            name, value = line.split("=", 1)
+            if name.strip() != "YOUTUBE_API_KEY":
+                continue
+            value = value.strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                value = value[1:-1]
+            if value:
+                os.environ["YOUTUBE_API_KEY"] = value
+            return
+
 def api_get(resource: str, params: dict[str, str], api_key: str) -> dict:
     query = urllib.parse.urlencode({**params, "key": api_key})
     request = urllib.request.Request(
         f"{API_BASE}/{resource}?{query}",
-        headers={"Accept": "application/json", "User-Agent": "kerala-news-live-updater/1.0"},
+        headers={"Accept": "application/json", "User-Agent": "multiple-news-live-updater/1.0"},
     )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
@@ -135,6 +158,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
+    load_env_local()
     api_key = os.environ.get("YOUTUBE_API_KEY")
     if not api_key:
         print("YOUTUBE_API_KEY is not set", file=sys.stderr)
@@ -162,11 +186,11 @@ def main() -> int:
         channel["videoId"] = current
         if current != previous:
             changed += 1
-            print(f"UPDATED  {channel['name']}: {previous or '-'} -> {current or 'offline'}")
+            print(f"UPDATED  {channel['name']} {channel['Handle']}  : {previous or '-'} -> {current or 'offline'}")
         elif current:
-            print(f"UNCHANGED {channel['name']}: {current}")
+            print(f"UNCHANGED {channel['name']} {channel['Handle']} : {current}")
         else:
-            print(f"OFFLINE  {channel['name']}")
+            print(f"OFFLINE  {channel['name']} {channel['Handle']} ")
 
     if args.dry_run:
         print(f"Dry run complete; {changed} change(s) found")
