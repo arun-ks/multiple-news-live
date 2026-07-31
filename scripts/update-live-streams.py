@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh videoId values in channels.js using the YouTube Data API."""
+"""Refresh channels.js and channels.json using the YouTube Data API."""
 
 from __future__ import annotations
 
@@ -131,6 +131,10 @@ def render_channels(channels: list[dict]) -> str:
     return FILE_PREFIX + ",\n".join(rows) + FILE_SUFFIX
 
 
+def render_channels_json(channels: list[dict]) -> str:
+    return json.dumps(channels, ensure_ascii=False, indent=2) + "\n"
+
+
 def write_atomically(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
@@ -153,8 +157,11 @@ def write_atomically(path: Path, content: str) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    default_channels = Path(__file__).resolve().parents[1] / "channels.js"
+    project_root = Path(__file__).resolve().parents[1]
+    default_channels = project_root / "channels.js"
+    default_json = project_root / "channels.json"
     parser.add_argument("--channels", type=Path, default=default_channels)
+    parser.add_argument("--json", type=Path, default=default_json)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -197,10 +204,11 @@ def main() -> int:
     else:
         try:
             write_atomically(args.channels, render_channels(channels))
+            write_atomically(args.json, render_channels_json(channels))
         except OSError as error:
             print(f"Could not write {args.channels}: {error}", file=sys.stderr)
             return 1
-        print(f"Updated {args.channels} atomically; {changed} change(s)")
+        print(f"Updated {args.channels} and {args.json} atomically; {changed} change(s)")
     return 0
 
 

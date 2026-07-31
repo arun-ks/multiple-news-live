@@ -6,89 +6,94 @@ const panelSpeaker = document.getElementById("panelSpeaker");
 const panelMinimize = document.getElementById("panelMinimize");
 const panelStatus = document.getElementById("panelStatus");
 
+const CHANNELS_URL = "https://arun-ks.github.io/multiple-news-live/channels.json";
+let CHANNELS = [];
+
 const players = [];
 const hidden = new Set();
 let activeAudioIndex = -1;
 let isPanelExpanded = true;
 
-// Load YouTube IFrame API
-const tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-document.head.appendChild(tag);
+function initializeChannels() {
+  // Load YouTube IFrame API
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
 
-// Create tiles and audio buttons
-CHANNELS.forEach((channel, i) => {
-  const tile = document.createElement("div");
-  tile.className = "tile";
-  tile.id = `tile-${i}`;
+  // Create tiles and audio buttons
+  CHANNELS.forEach((channel, i) => {
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    tile.id = `tile-${i}`;
 
-  if (channel.videoId) {
-    const iframe = document.createElement("iframe");
-    iframe.id = `player-${i}`;
-    const origin = encodeURIComponent(window.location.origin);
-    iframe.src = `https://www.youtube.com/embed/${channel.videoId}?enablejsapi=1&autoplay=1&mute=1&playsinline=1&rel=0&origin=${origin}`;
-    iframe.title = channel.name;
-    iframe.loading = "lazy";
-    iframe.referrerPolicy = "strict-origin-when-cross-origin";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-    tile.appendChild(iframe);
-  } else {
-    const offlineState = document.createElement("div");
-    offlineState.className = "offline-state";
-    offlineState.textContent = `${channel.name} is currently offline`;
-    tile.appendChild(offlineState);
-  }
-  grid.appendChild(tile);
+    if (channel.videoId) {
+      const iframe = document.createElement("iframe");
+      iframe.id = `player-${i}`;
+      const origin = encodeURIComponent(window.location.origin);
+      iframe.src = `https://www.youtube.com/embed/${channel.videoId}?enablejsapi=1&autoplay=1&mute=1&playsinline=1&rel=0&origin=${origin}`;
+      iframe.title = channel.name;
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      tile.appendChild(iframe);
+    } else {
+      const offlineState = document.createElement("div");
+      offlineState.className = "offline-state";
+      offlineState.textContent = `${channel.name} is currently offline`;
+      tile.appendChild(offlineState);
+    }
+    grid.appendChild(tile);
 
-  const btn = document.createElement("div");
-  btn.className = `audio-btn${channel.videoId ? "" : " offline"}`;
-  btn.innerHTML = `
-    <span class="status">${channel.videoId ? "🔇" : "⏸️"}</span>
-    <span class="label">${channel.name}</span>
-    <span class="index">#${i + 1}</span>
-    <button class="vis-toggle" title="Hide/show this video">👁️</button>
-  `;
-  btn.dataset.index = i;
-  btn.addEventListener("click", (event) => {
-    if (event.target.classList.contains("vis-toggle")) return;
-    event.stopPropagation();
-    if (!channel.videoId || hidden.has(i)) return;
-    setAudioFocus(i);
-    if (!isPanelExpanded) expandPanel();
+    const btn = document.createElement("div");
+    btn.className = `audio-btn${channel.videoId ? "" : " offline"}`;
+    btn.innerHTML = `
+      <span class="status">${channel.videoId ? "🔇" : "⏸️"}</span>
+      <span class="label">${channel.name}</span>
+      <span class="index">#${i + 1}</span>
+      <button class="vis-toggle" title="Hide/show this video">👁️</button>
+    `;
+    btn.dataset.index = i;
+    btn.addEventListener("click", (event) => {
+      if (event.target.classList.contains("vis-toggle")) return;
+      event.stopPropagation();
+      if (!channel.videoId || hidden.has(i)) return;
+      setAudioFocus(i);
+      if (!isPanelExpanded) expandPanel();
+    });
+    btn.querySelector(".vis-toggle").addEventListener("click", (event) => {
+      event.stopPropagation();
+      toggleVisibility(i);
+    });
+    audioButtonsContainer.appendChild(btn);
   });
-  btn.querySelector(".vis-toggle").addEventListener("click", (event) => {
+
+  // Show All / Hide All quick actions
+  const actions = document.createElement("div");
+  actions.className = "panel-actions";
+  actions.innerHTML = `<button id="showAllBtn">Show All</button><button id="hideAllBtn">Hide All</button>`;
+  audioButtonsContainer.appendChild(actions);
+  actions.querySelector("#showAllBtn").addEventListener("click", (event) => {
     event.stopPropagation();
-    toggleVisibility(i);
+    hidden.clear();
+    applyVisibility();
   });
-  audioButtonsContainer.appendChild(btn);
-});
+  actions.querySelector("#hideAllBtn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    CHANNELS.forEach((_, i) => hidden.add(i));
+    applyVisibility();
+  });
 
-// Show All / Hide All quick actions
-const actions = document.createElement("div");
-actions.className = "panel-actions";
-actions.innerHTML = `<button id="showAllBtn">Show All</button><button id="hideAllBtn">Hide All</button>`;
-audioButtonsContainer.appendChild(actions);
-actions.querySelector("#showAllBtn").addEventListener("click", (event) => {
-  event.stopPropagation();
-  hidden.clear();
-  applyVisibility();
-});
-actions.querySelector("#hideAllBtn").addEventListener("click", (event) => {
-  event.stopPropagation();
-  CHANNELS.forEach((_, i) => hidden.add(i));
-  applyVisibility();
-});
-
-// Mute All button at top
-const muteAllBtn = document.createElement("button");
-muteAllBtn.className = "mute-all-btn";
-muteAllBtn.innerHTML = `<span class="icon">🔇</span> Mute All`;
-muteAllBtn.addEventListener("click", (event) => {
-  event.stopPropagation();
-  setAudioFocus(-1);
-});
-audioButtonsContainer.insertBefore(muteAllBtn, audioButtonsContainer.firstChild);
+  // Mute All button at top
+  const muteAllBtn = document.createElement("button");
+  muteAllBtn.className = "mute-all-btn";
+  muteAllBtn.innerHTML = `<span class="icon">🔇</span> Mute All`;
+  muteAllBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setAudioFocus(-1);
+  });
+  audioButtonsContainer.insertBefore(muteAllBtn, audioButtonsContainer.firstChild);
+}
 
 function expandPanel() {
   if (!isPanelExpanded) {
@@ -235,4 +240,29 @@ document.addEventListener("keydown", (event) => {
   if (key === "Escape" && isPanelExpanded) collapsePanel();
 });
 
-setAudioFocus(-1);
+async function loadChannels() {
+  try {
+    const response = await fetch(CHANNELS_URL, {cache: "no-store"});
+    if (!response.ok) {
+      throw new Error(`Channel request failed with HTTP ${response.status}`);
+    }
+
+    const channels = await response.json();
+    if (!Array.isArray(channels)) {
+      throw new Error("Channel response is not an array");
+    }
+
+    CHANNELS = channels;
+    initializeChannels();
+    setAudioFocus(-1);
+  } catch (error) {
+    console.error("Could not load channel configuration", error);
+    const errorState = document.createElement("div");
+    errorState.className = "offline-state";
+    errorState.textContent = "Could not load the channel list. Please try again shortly.";
+    grid.appendChild(errorState);
+    panelStatus.textContent = "Channels unavailable";
+  }
+}
+
+loadChannels();
