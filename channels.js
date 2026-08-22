@@ -3,16 +3,16 @@
 const CHANNELS = [
   {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "K0ApVMEAc1w"},
   {"name": "CNA", "Handle": "@channelnewsasia", "channelId": "UC83jt4dlz1Gjl58fzQrrKZg", "videoId": "XWq5kBlakcQ"},
-  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "24NwieiKQNM"},
-  {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "mboHQ7qU_Q8"},
-  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "YYI0NB66I3o"},
+  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "Fk7XGZm_lKw"},
+  {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "QmO9rMcECqg"},
+  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "RhlX5qTBFpM"},
   {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "L80rPJOIiKw"},
-  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "Dkbv0NJQvJs"},
+  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "oeOtwXZelhM"},
   {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": "yiiqRHY1Bl8"},
   {"name": "Asianet News", "Handle": "@AsianetNews", "channelId": "UCf8w5m0YsRa8MHQ5bwSGmbw", "videoId": "s0LLVQeMmtU"},
   {"name": "Reporter", "Handle": "@reporterlive", "channelId": "UCFx1nseXKTc1Culiu3neeSQ", "videoId": "nObUcHKZEGY"},
   {"name": "Manorama", "Handle": "@manoramanews", "channelId": "UCP0uG-mcMImgKnJz-VjJZmQ", "videoId": "tgBTspqA5nY"},
   {"name": "Mathrubhumi", "Handle": "@TVMathrubhumi", "channelId": "UCwXrBBZnIh2ER4lal6WbAHw", "videoId": "RbxEftGN584"},
-  {"name": "Janam", "Handle": "@TVJanam", "channelId": "UCNVkxRPqsBNejO6B9thG9Xw", "videoId": "6xA6wa-H1tA"},
+  {"name": "Janam", "Handle": "@TVJanam", "channelId": "UCNVkxRPqsBNejO6B9thG9Xw", "videoId": "6KlSreyoj5U"},
   {"name": "Media One", "Handle": "@MediaoneTVLive", "channelId": "UC-f7r46JhYv78q5pGrO6ivA", "videoId": "-8d8-c0yvyU"}
 ];
