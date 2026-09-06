@@ -1,12 +1,12 @@
 // Data-only channel configuration. videoId values are maintained by
 // scripts/update-live-streams.py.
 const CHANNELS = [
-  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "m8hGjtI6kgc"},
+  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "i1hMPIK7BlI"},
   {"name": "CNA", "Handle": "@channelnewsasia", "channelId": "UC83jt4dlz1Gjl58fzQrrKZg", "videoId": "XWq5kBlakcQ"},
-  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "ZhpFXLu8ZVE"},
+  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "dFCFvUVUSq0"},
   {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": null},
-  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "J99UEh4q6lQ"},
-  {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "EAGqkjxtLuQ"},
+  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "aKkfVkRtwyw"},
+  {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "caleRYOTCuM"},
   {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "2ZGsL0wiGjc"},
   {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": "yiiqRHY1Bl8"},
   {"name": "Asianet News", "Handle": "@AsianetNews", "channelId": "UCf8w5m0YsRa8MHQ5bwSGmbw", "videoId": "s0LLVQeMmtU"},
