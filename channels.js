@@ -1,10 +1,10 @@
 // Data-only channel configuration. videoId values are maintained by
 // scripts/update-live-streams.py.
 const CHANNELS = [
-  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "4VXnmZi3qVk"},
+  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "PO6On0wY4LM"},
   {"name": "CNA", "Handle": "@channelnewsasia", "channelId": "UC83jt4dlz1Gjl58fzQrrKZg", "videoId": "XWq5kBlakcQ"},
-  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "cqxSwwsRYSc"},
-  {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "-N6iyuOOhA0"},
+  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "t3wjy7qOHCk"},
+  {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": null},
   {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "NyBKQE_SIN8"},
   {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "iQycqNozWrY"},
   {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "5opi01nCMpI"},
