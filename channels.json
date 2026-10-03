@@ -3,7 +3,7 @@
     "name": "NDTV",
     "Handle": "@NDTV",
     "channelId": "UCZFMm1mMw0F81Z37aaEzTUA",
-    "videoId": "wCS3k75uAi4"
+    "videoId": "GeOWorhBZCE"
   },
   {
     "name": "CNA",
@@ -15,25 +15,25 @@
     "name": "Hindustan Times",
     "Handle": "@HT-Videos",
     "channelId": "UCm7lHFkt2yB_WzL67aruVBQ",
-    "videoId": "R8ZYL00-K28"
+    "videoId": "zx0FwlRWIvs"
   },
   {
     "name": "Asianet Eng",
     "Handle": "@asianetnewsenglish",
     "channelId": "UCekbhIcWL_x4bYVZPZZi0iw",
-    "videoId": "UmAsGiw8FmA"
+    "videoId": null
   },
   {
     "name": "APB Live",
     "Handle": "@ABPNews",
     "channelId": "UCRWFSbif-RFENbBrSiez1DA",
-    "videoId": "bG0Q-bv0gII"
+    "videoId": "V9_fe2EbMeo"
   },
   {
     "name": "News X",
     "Handle": "@newsxlive",
     "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig",
-    "videoId": "ZOXb4m2XZWk"
+    "videoId": "2G43_QnA1oc"
   },
   {
     "name": "Bharat 24",
@@ -45,7 +45,7 @@
     "name": "Kairali",
     "Handle": "@kairalinews",
     "channelId": "UCnEvxaWfVL91XIYuyQRO5QA",
-    "videoId": "lUkoZkTcty0"
+    "videoId": "yiiqRHY1Bl8"
   },
   {
     "name": "Asianet News",
@@ -63,7 +63,7 @@
     "name": "Manorama",
     "Handle": "@manoramanews",
     "channelId": "UCP0uG-mcMImgKnJz-VjJZmQ",
-    "videoId": "y8ohAbKhwGM"
+    "videoId": null
   },
   {
     "name": "Mathrubhumi",
@@ -75,7 +75,7 @@
     "name": "Janam",
     "Handle": "@TVJanam",
     "channelId": "UCNVkxRPqsBNejO6B9thG9Xw",
-    "videoId": "QnPSy6TZwfI"
+    "videoId": null
   },
   {
     "name": "Media One",
