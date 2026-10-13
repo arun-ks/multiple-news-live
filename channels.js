@@ -1,18 +1,18 @@
 // Data-only channel configuration. videoId values are maintained by
 // scripts/update-live-streams.py.
 const CHANNELS = [
-  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "b9yV1wRZX8I"},
+  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "kaiQqHVdMv4"},
   {"name": "CNA", "Handle": "@channelnewsasia", "channelId": "UC83jt4dlz1Gjl58fzQrrKZg", "videoId": null},
-  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "QWKwAM__aYU"},
-  {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": null},
-  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "NTCOYnnaFjs"},
-  {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "tiB9apBx220"},
-  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "lNcNogRJwhA"},
-  {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": null},
+  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "K0lkF2D7O20"},
+  {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "-cfsAdn7jG0"},
+  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "StuE0IgQeyA"},
+  {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "ksOeBGyIzzI"},
+  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "2JCByqBLft0"},
+  {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": "TNWzEOqWkOA"},
   {"name": "Asianet News", "Handle": "@AsianetNews", "channelId": "UCf8w5m0YsRa8MHQ5bwSGmbw", "videoId": null},
   {"name": "Reporter", "Handle": "@reporterlive", "channelId": "UCFx1nseXKTc1Culiu3neeSQ", "videoId": null},
-  {"name": "Manorama", "Handle": "@manoramanews", "channelId": "UCP0uG-mcMImgKnJz-VjJZmQ", "videoId": null},
+  {"name": "Manorama", "Handle": "@manoramanews", "channelId": "UCP0uG-mcMImgKnJz-VjJZmQ", "videoId": "4QAxaO8-xQ8"},
   {"name": "Mathrubhumi", "Handle": "@TVMathrubhumi", "channelId": "UCwXrBBZnIh2ER4lal6WbAHw", "videoId": null},
-  {"name": "Janam", "Handle": "@TVJanam", "channelId": "UCNVkxRPqsBNejO6B9thG9Xw", "videoId": null},
+  {"name": "Janam", "Handle": "@TVJanam", "channelId": "UCNVkxRPqsBNejO6B9thG9Xw", "videoId": "iJrobj3B6WU"},
   {"name": "Media One", "Handle": "@MediaoneTVLive", "channelId": "UC-f7r46JhYv78q5pGrO6ivA", "videoId": null}
 ];
