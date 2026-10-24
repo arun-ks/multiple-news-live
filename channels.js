@@ -1,7 +1,7 @@
 // Data-only channel configuration. videoId values are maintained by
 // scripts/update-live-streams.py.
 const CHANNELS = [
-  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "S74Zb7ILUj4"},
+  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "Dsfbsto7gvo"},
   {"name": "CNA", "Handle": "@channelnewsasia", "channelId": "UC83jt4dlz1Gjl58fzQrrKZg", "videoId": "-PWMxjBgr0k"},
   {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "Q89UVl3QhGo"},
   {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": "ORSS6G6T_Xs"},
