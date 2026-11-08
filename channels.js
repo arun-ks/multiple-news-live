@@ -1,14 +1,14 @@
 // Data-only channel configuration. videoId values are maintained by
 // scripts/update-live-streams.py.
 const CHANNELS = [
-  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "ttPmVFlCrOE"},
+  {"name": "NDTV", "Handle": "@NDTV", "channelId": "UCZFMm1mMw0F81Z37aaEzTUA", "videoId": "Oc-yGMUNQGI"},
   {"name": "CNA", "Handle": "@channelnewsasia", "channelId": "UC83jt4dlz1Gjl58fzQrrKZg", "videoId": "-PWMxjBgr0k"},
-  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "_e4v6N5PvH4"},
+  {"name": "Hindustan Times", "Handle": "@HT-Videos", "channelId": "UCm7lHFkt2yB_WzL67aruVBQ", "videoId": "TK9pfrzSjCw"},
   {"name": "Asianet Eng", "Handle": "@asianetnewsenglish", "channelId": "UCekbhIcWL_x4bYVZPZZi0iw", "videoId": null},
-  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "ZgIgyD6Go28"},
-  {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "wdsKN6YkOT0"},
-  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "0CQbaEjIiEk"},
-  {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": "yiiqRHY1Bl8"},
+  {"name": "APB Live", "Handle": "@ABPNews", "channelId": "UCRWFSbif-RFENbBrSiez1DA", "videoId": "M1efQRgpdb4"},
+  {"name": "News X", "Handle": "@newsxlive", "channelId": "UCytSP0M0Jdnw6qIy3Y-nTig", "videoId": "ExMOaf7jwNw"},
+  {"name": "Bharat 24", "Handle": "@Bharat24Liv", "channelId": "UCCQmi1Bd-_tHRm6M2uPlGUA", "videoId": "MHWqwVSgQcs"},
+  {"name": "Kairali", "Handle": "@kairalinews", "channelId": "UCnEvxaWfVL91XIYuyQRO5QA", "videoId": "3U4jy3Wt-Js"},
   {"name": "Asianet News", "Handle": "@AsianetNews", "channelId": "UCf8w5m0YsRa8MHQ5bwSGmbw", "videoId": "x1bfKawndzs"},
   {"name": "Reporter", "Handle": "@reporterlive", "channelId": "UCFx1nseXKTc1Culiu3neeSQ", "videoId": "nObUcHKZEGY"},
   {"name": "Manorama", "Handle": "@manoramanews", "channelId": "UCP0uG-mcMImgKnJz-VjJZmQ", "videoId": "tgBTspqA5nY"},
